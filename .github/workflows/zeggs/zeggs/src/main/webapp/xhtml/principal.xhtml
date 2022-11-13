@@ -8,9 +8,19 @@
     <ui:define name="title">Principal</ui:define>
 
     <ui:define name="content">
-        <h1>Bienvenid@ al sistema con los huevos más grandes.</h1>
-        <br/>
-        <h2>Se puede poner lo que guste</h2>
+        <div class="grid grid-nogutter surface-section text-800">
+            <div class="col-12 md:col-6 p-12 text-center md:text-left flex align-items-center ">
+                <section>
+                    <span class="block text-6xl font-bold mb-1">Bienvenid@</span>
+                    <div class="text-6xl text-primary font-bold mb-3">Nos alegra que estés por acá</div>
+                </section>
+            </div>
+            <div class="col-12 md:col-6 p-12 overflow-hidden ">
+                <p:graphicImage name="images/ponedora.png" library="omega-layout" width="100%"
+                                styleClass="md:ml-auto flex md:h-full"
+                                />
+            </div>
+        </div>
     </ui:define>
 
 </ui:composition>
