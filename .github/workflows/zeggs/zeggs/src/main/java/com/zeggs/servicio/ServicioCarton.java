@@ -12,10 +12,10 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class ServicioCarton {
-    
+
     @PersistenceContext(unitName = "zeggsPU")
     EntityManager em;
-    
+
     public List<Carton> consultarPorUsuario(Long idUsuario) {
         try {
             return em.createNamedQuery("PorUsuario", Carton.class)
@@ -24,5 +24,9 @@ public class ServicioCarton {
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
+    }
+
+    public void agregarPorUsuario(Carton carton) {
+        em.persist(carton);
     }
 }

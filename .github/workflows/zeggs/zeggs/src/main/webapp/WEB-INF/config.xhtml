@@ -10,36 +10,36 @@
 
     <div id="layout-config" class="layout-config">
         <h:form id="config-form">
-            <h5>Menu Mode</h5>
+            <h5>Modo</h5>
             <p:selectOneRadio value="#{guestPreferences.menuMode}" layout="pageDirection"
                               onchange="PrimeFaces.OmegaConfigurator.changeMenuMode(event.target.value)">
-                <f:selectItem itemLabel="Static" itemValue="menu-layout-static"/>
-                <f:selectItem itemLabel="Overlay" itemValue="menu-layout-overlay"/>
+                <f:selectItem itemLabel="Estático" itemValue="menu-layout-static"/>
+                <f:selectItem itemLabel="Cubierto" itemValue="menu-layout-overlay"/>
                 <p:ajax update="config-form menuform"/>
             </p:selectOneRadio>
 
             <hr/>
 
-            <h5>Menu Color</h5>
+            <h5>Color de Menú</h5>
             <p:selectOneRadio value="#{guestPreferences.menuColor}" layout="pageDirection" onchange="PrimeFaces.OmegaConfigurator.changeMenuColor(event.target.value)" >
-                <f:selectItem itemLabel="Light" itemValue="light"/>
-                <f:selectItem itemLabel="Dark" itemValue="dark"/>
+                <f:selectItem itemLabel="Claro" itemValue="light"/>
+                <f:selectItem itemLabel="Oscuro" itemValue="dark"/>
                 <p:ajax update="config-form menuform" />
             </p:selectOneRadio>
 
             <hr/>
 
-            <h5>Input Style</h5>
+            <h5>Estilo de Entrada</h5>
             <p:selectOneRadio value="#{guestPreferences.inputStyle}" layout="pageDirection"
                               onchange="PrimeFaces.OmegaConfigurator.updateInputStyle(event.target.value)">
-                <f:selectItem itemLabel="Outlined" itemValue="outlined"/>
-                <f:selectItem itemLabel="Filled" itemValue="filled"/>
+                <f:selectItem itemLabel="Contorno" itemValue="outlined"/>
+                <f:selectItem itemLabel="Lleno" itemValue="filled"/>
                 <p:ajax/>
             </p:selectOneRadio>
 
             <hr/>
 
-            <h5>Topbar</h5>
+            <h5>Color de Barra Superior</h5>
             <div class="layout-themes">
                 <ui:repeat value="#{guestPreferences.layouts}" var="layout">
                     <div>

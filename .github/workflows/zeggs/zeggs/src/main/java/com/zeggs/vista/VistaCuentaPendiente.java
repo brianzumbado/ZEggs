@@ -33,12 +33,12 @@ public class VistaCuentaPendiente implements Serializable {
     @PostConstruct
     public void init() {
         listaCartones = new ArrayList<>();
-        totalSumListaCartones = 0;
         cargarListaCartones();
     }
 
     public void cargarListaCartones() {
         listaCartones = servicioCarton.consultarPorUsuario(2l);
+        totalSumListaCartones = 0;
         for (Carton carton : listaCartones) {
             if (carton.getEstado() != 1) {
                 totalSumListaCartones += carton.getPrecio();
