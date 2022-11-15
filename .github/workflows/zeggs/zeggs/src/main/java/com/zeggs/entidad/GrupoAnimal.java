@@ -24,7 +24,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NamedQueries({
-    @NamedQuery(name = "PorNombre", query = "SELECT ga FROM GrupoAnimal ga WHERE ga.nombreGrupo = :nombreGrupo")
+    @NamedQuery(name = "ConsultaGrupoAnimal", query = "SELECT ga FROM GrupoAnimal ga")
 })
 public class GrupoAnimal implements Serializable {
 

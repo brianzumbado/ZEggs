@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">#{lbl['mantenimiento.agregarProducto.titulo']}</ui:define>
+
+    <ui:define name="content">
+        <h:form id="form_m_producto">
+            <p:panel>
+                <p:panelGrid columns="4" layout="flex"
+                             columnClasses="col-12 md:col-3 xl:col-2, col-12 md:col-9 xl:col-4, col-12 md:col-3 xl:col-2, col-12 md:col-9 xl:col-4"
+                             contentStyleClass="align-items-baseline ui-fluid">
+                    <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarProducto.grupo']}" />
+                    <p:selectOneMenu id="producto" value="#{vistaMantenimientoProducto.productoNuevo.idGrupoAnimal}" required="true" >
+                        <f:selectItem itemLabel="Seleccione" itemValue="#{null}"/>
+                        <f:selectItems value="#{vistaMantenimientoProducto.listaGrupoAnimal}" 
+                                       var="grupoAnimal" 
+                                       itemLabel="#{grupoAnimal.nombreGrupo}"
+                                       itemValue="#{grupoAnimal.idGrupoAnimal}"/>
+                    </p:selectOneMenu>
+
+                    <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarProducto.cantidad']}"/>
+                    <p:inputNumber value="#{vistaMantenimientoProducto.productoNuevo.cantidad}" required="true"/>
+                </p:panelGrid>
+                <p:panelGrid columns="2" layout="flex"
+                             columnClasses="col-12 md:col-3 xl:col-2, col-12 md:col-3 xl:col-2"
+                             contentStyleClass="align-items-center ui-fluid">
+                    <p:commandButton type="summit" 
+                                     update="@form" 
+                                     value="#{lbl['mantenimiento.agregarProducto.guardar']}" 
+                                     actionListener="#{vistaMantenimientoProducto.agregarProducto()}"
+                                     />
+                    <p:button value="#{lbl['mantenimiento.agregarProducto.cancelar']}" href="../../xhtml/principal.xhtml" />
+                </p:panelGrid>
+            </p:panel>
+        </h:form>        
+    </ui:define>
+
+</ui:composition>

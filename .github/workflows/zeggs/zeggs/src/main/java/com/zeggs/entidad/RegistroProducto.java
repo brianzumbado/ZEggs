@@ -24,7 +24,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NamedQueries({
-    @NamedQuery(name = "PorProducto", query = "SELECT p FROM RegistroProducto p WHERE p.producto = :producto")
+    @NamedQuery(name = "PorGrupoAnimal", query = "SELECT p FROM RegistroProducto p WHERE p.idGrupoAnimal = :idGrupoAnimal")
 })
 public class RegistroProducto implements Serializable {
 
@@ -32,12 +32,10 @@ public class RegistroProducto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_registro_producto")
     @EqualsAndHashCode.Include
-    private Long idUsuario;
+    private Long idRegistroProducto;
 
     @Column(name = "id_grupo_animal")
     private Long idGrupoAnimal;
-    @Column(name = "producto")
-    private String producto;
     @Column(name = "cantidad")
     private Integer cantidad;
     @Column(name = "fec_registra")

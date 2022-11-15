@@ -19,7 +19,7 @@ public class ServicioUsuario {
 
     public List<Usuario> consultar() {
         try {
-            return em.createNamedQuery("ConsultaTodos", Usuario.class)
+            return em.createNamedQuery("ConsultaUsuario", Usuario.class)
                     .getResultList();
         } catch (Exception ex) {
             throw new RuntimeException(ex);
