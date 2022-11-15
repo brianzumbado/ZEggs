@@ -13,29 +13,37 @@
                 <p:panelGrid columns="4" layout="flex"
                              columnClasses="col-12 md:col-3 xl:col-2, col-12 md:col-9 xl:col-4, col-12 md:col-3 xl:col-2, col-12 md:col-9 xl:col-4"
                              contentStyleClass="align-items-baseline ui-fluid">
-                    <p:outputLabel for="@next" value="Basic"/>
-                    <p:selectOneMenu id="option" value="#{vistaMantenimientoCarton.cartonNuevo.idUsuario}" required="true">
-                        <f:selectItem itemLabel="Seleccione" itemValue=""/>
-                        <f:selectItem itemLabel="ssolisc" itemValue="2"/>
-                        <f:selectItem itemLabel="flaco" itemValue="3"/>
+                    <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarCarton.usuario']}" />
+                    <p:selectOneMenu id="usuario" value="#{vistaMantenimientoCarton.cartonNuevo.idUsuario}" required="true" >
+                        <f:selectItem itemLabel="Seleccione" itemValue="null"/>
+                        <f:selectItems value="#{vistaMantenimientoCarton.listaUsuario}" 
+                                       var="usuario" 
+                                       itemLabel="#{usuario.nombre} #{usuario.apellido1}"
+                                       itemValue="#{usuario.idUsuario}"/>
+                        <f:converter converterId="javax.faces.Long" />
                     </p:selectOneMenu>
-                    <p:outputLabel for="@next" value="Cantidad"/>
+
+                    <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarCarton.cantidad']}"/>
                     <p:inputNumber value="#{vistaMantenimientoCarton.cartonNuevo.cantidad}" required="true"/>
-                    <p:outputLabel for="@next" value="Precio"/>
+                    <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarCarton.precio']}"/>
                     <p:inputNumber value="#{vistaMantenimientoCarton.cartonNuevo.precio}" required="true" />
-                    <p:outputLabel for="@next" value="Estado"/>
+                    <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarCarton.estado']}"/>
                     <p:selectOneMenu id="estado" value="#{vistaMantenimientoCarton.cartonNuevo.estado}" required="true">
-                        <f:selectItem itemLabel="Seleccione" itemValue=""/>
+                        <f:selectItem itemLabel="Seleccione" itemValue="null"/>
                         <f:selectItem itemLabel="Pendiente" itemValue="0"/>
                         <f:selectItem itemLabel="Cancelado" itemValue="1"/>
-                        <f:selectItem itemLabel="Abonado" itemValue="2"/>                                
+                        <f:selectItem itemLabel="Abonado" itemValue="2"/>  
+                        <f:converter converterId="javax.faces.Integer" />
                     </p:selectOneMenu>
                 </p:panelGrid>
                 <p:panelGrid columns="2" layout="flex"
-                             columnClasses="col-12 md:col-2 xl:col-2, col-12 md:col-6 xl:col-2"
-                             contentStyleClass="align-items-baseline ui-fluid">
-                    <p:commandButton type="button" value="Guardar" actionListener="#{vistaMantenimientoCarton.agregarCarton()}"/>
-                    <p:commandButton type="button" value="Cancelar"/>
+                             columnClasses="col-12 md:col-3 xl:col-2, col-12 md:col-3 xl:col-2"
+                             contentStyleClass="align-items-center ui-fluid">
+                    <p:commandButton type="summit" 
+                                     update="form_m_carton" 
+                                     value="#{lbl['mantenimiento.agregarCarton.guardar']}" 
+                                     actionListener="#{vistaMantenimientoCarton.agregarCarton()}"/>
+                    <p:button value="#{lbl['mantenimiento.agregarCarton.cancelar']}" href="../../xhtml/principal.xhtml" />
                 </p:panelGrid>
             </p:panel>
         </h:form>        

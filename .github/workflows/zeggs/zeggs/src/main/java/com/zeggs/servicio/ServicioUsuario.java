@@ -13,10 +13,19 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class ServicioUsuario {
-    
+
     @PersistenceContext(unitName = "zeggsPU")
     EntityManager em;
-    
+
+    public List<Usuario> consultar() {
+        try {
+            return em.createNamedQuery("ConsultaTodos", Usuario.class)
+                    .getResultList();
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
     public Optional<Usuario> obtenerPorNombre(String nombre, String password) {
         try {
             List<Usuario> resultado = em.createNamedQuery("PorNombrePassword", Usuario.class)

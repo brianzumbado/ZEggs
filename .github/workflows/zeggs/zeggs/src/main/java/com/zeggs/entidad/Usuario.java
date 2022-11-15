@@ -24,6 +24,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NamedQueries({
+    @NamedQuery(name = "ConsultaTodos", query = "SELECT u FROM Usuario u"),
     @NamedQuery(name = "PorNombrePassword", query = "SELECT u FROM Usuario u WHERE u.username = :username AND u.password = :password")
 })
 public class Usuario implements Serializable {

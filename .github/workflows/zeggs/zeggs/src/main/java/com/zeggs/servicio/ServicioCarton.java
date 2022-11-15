@@ -27,6 +27,10 @@ public class ServicioCarton {
     }
 
     public void agregarPorUsuario(Carton carton) {
-        em.persist(carton);
+        try {
+            em.persist(carton);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }
