@@ -4,12 +4,13 @@ import com.zeggs.entidad.Carton;
 import com.zeggs.entidad.Usuario;
 import com.zeggs.servicio.ServicioCarton;
 import com.zeggs.servicio.ServicioUsuario;
+import com.zeggs.util.Utilitario;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -28,7 +29,7 @@ public class VistaMantenimientoCarton implements Serializable {
     @Inject
     private ServicioCarton servicioCarton;
     @Inject
-    private ServicioUsuario servicioUsuario;
+    private Utilitario utilitario;
 
     @Getter
     @Setter
@@ -44,12 +45,23 @@ public class VistaMantenimientoCarton implements Serializable {
     }
 
     public void agregarCarton() {
-        cartonNuevo.setFecRegistra(new Date());
-        servicioCarton.agregarPorUsuario(cartonNuevo);
+        try {
+            cartonNuevo.setFecRegistra(new Date());
+            if ((cartonNuevo.getIdUsuario() != null)
+                    && (cartonNuevo.getEstado() != null)) {
+                servicioCarton.agregarPorUsuario(cartonNuevo);
+                FacesContext.getCurrentInstance().getExternalContext().redirect("../../xhtml/principal.xhtml");
+                FacesContext.getCurrentInstance().responseComplete();
+            } else {
+                //msj de error
+            }
+        } catch (Exception ex) {
+            //msj error
+        }
     }
 
     public void cargaUsuarios() {
-        listaUsuario = servicioUsuario.consultar();
+        listaUsuario = utilitario.cargaUsuarios();
     }
 
 }

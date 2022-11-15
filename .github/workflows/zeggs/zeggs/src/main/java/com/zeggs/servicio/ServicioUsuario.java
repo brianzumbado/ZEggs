@@ -26,7 +26,7 @@ public class ServicioUsuario {
         }
     }
 
-    public Optional<Usuario> obtenerPorNombre(String nombre, String password) {
+    public Optional<Usuario> obtenerPorNombrePassword(String nombre, String password) {
         try {
             List<Usuario> resultado = em.createNamedQuery("PorNombrePassword", Usuario.class)
                     .setParameter("username", nombre)

@@ -10,8 +10,29 @@
     <ui:define name="content">
         <h:form id="form_c_cuentaPendiente">
             <p:panel>
-                <p:dataTable id="tablaCarton" var="carton" value="#{vistaCuentaPendiente.listaCartones}" rows="10"
-                             paginator="true" paginatorPosition="bottom" widgetVar="tablaCarton"
+                <p:toolbar styleClass="col-12 align-items-end">
+                    <p:toolbarGroup align="left" styleClass="align-items-center ui-fluid col-12 md:col-6 xl:col-3" >
+                        <p:selectOneMenu id="tb-usuario" value="#{vistaCuentaPendiente.idUsuario}" required="true">
+                            <f:selectItem itemLabel="Seleccione" itemValue="#{null}"/>
+                            <f:selectItems value="#{vistaCuentaPendiente.listaUsuario}" 
+                                           var="usuario" 
+                                           itemLabel="#{usuario.nombre} #{usuario.apellido1}"
+                                           itemValue="#{usuario.idUsuario}"/>
+                        </p:selectOneMenu>
+                        <p:commandButton value="Buscar" icon="pi pi-search" 
+                                         actionListener="#{vistaCuentaPendiente.cargarListaCartones()}" 
+                                         update="form_c_cuentaPendiente"
+                                         styleClass="ui-button-success mt-2" />                       
+                    </p:toolbarGroup>
+                    <p:toolbarGroup align="right" styleClass="align-items-center ui-fluid col-12 md:col-6 xl:col-3">
+                        <p:commandButton value="Export" icon="pi pi-upload" styleClass="ui-button-help" ajax="false">
+                            <p:dataExporter type="pdf" target="dt-carton" fileName="TablaCartones"/>
+                        </p:commandButton>
+                    </p:toolbarGroup>
+                </p:toolbar>
+                
+                <p:dataTable id="dt-carton" var="carton" value="#{vistaCuentaPendiente.listaCartones}" rows="10"
+                             paginator="true" paginatorPosition="bottom" widgetVar="dt-carton"
                              emptyMessage="#{lbl['consulta.cuentaPendiente.tablaVacia']}"
                              reflow="true" stripedRows="true" rowKey="#{carton.idCarton}"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
@@ -22,30 +43,49 @@
                         <p:outputLabel style="font-size: x-large"> #{lbl['consulta.cuentaPendiente.tablaTitulo']} </p:outputLabel>
                     </f:facet>
 
-                    <p:column headerText="#{lbl['consulta.cuentaPendiente.fecha']}">
+                    <p:column headerText="#{lbl['consulta.cuentaPendiente.fecha']}" 
+                              sortBy="#{carton.fecRegistra}" 
+                              filterMatchMode="contains"
+                              filterBy="#{carton.fecRegistra}" >
                         <h:outputText value="#{carton.fecRegistra}" >
                             <f:convertDateTime pattern="dd/MM/yyyy" />
                         </h:outputText>
                     </p:column>
 
-                    <p:column headerText="#{lbl['consulta.cuentaPendiente.cantidad']}">
+                    <p:column headerText="#{lbl['consulta.cuentaPendiente.cantidad']}"
+                              sortBy="#{carton.cantidad}" 
+                              filterMatchMode="contains"
+                              filterBy="#{carton.cantidad}">
                         <h:outputText value="#{carton.cantidad}" />
                     </p:column>
 
-                    <p:column headerText="#{lbl['consulta.cuentaPendiente.estado']}">
+                    <p:column headerText="#{lbl['consulta.cuentaPendiente.estado']}"
+                              sortBy="#{carton.estado}"
+                              filterMatchMode="exact" filterBy="#{carton.estado}">
+                        <f:facet name="filter" >
+                            <p:selectOneMenu onchange="PF('dt-carton').filter()" style="width: 100%" styleClass="ui-custom-filter">
+                                <f:selectItem itemLabel="Todos" itemValue="#{null}" noSelectionOption="true" />
+                                <f:selectItem itemLabel="Pendiente" itemValue="0"/>
+                                <f:selectItem itemLabel="Cancelado" itemValue="1"/>
+                                <f:selectItem itemLabel="Abonado" itemValue="2"/>
+                            </p:selectOneMenu>
+                        </f:facet>
                         <h:outputText value="#{carton.estado eq 0 ? 'Pendiente' : (carton.estado eq 1 ? 'Cancelado' : 'Abonado')}" />
                     </p:column>
 
-                    <p:column headerText="#{lbl['consulta.cuentaPendiente.precio']}">
+                    <p:column headerText="#{lbl['consulta.cuentaPendiente.precio']}"
+                              sortBy="#{carton.precio}" 
+                              filterMatchMode="contains"
+                              filterBy="#{carton.precio}" >
                         <h:outputText value="#{carton.precio}" >
                             <f:convertNumber type="currency" maxFractionDigits="0" currencySymbol="¢"/>
                         </h:outputText>
                     </p:column>
 
-                    <p:columnGroup type="footer">
+                    <p:columnGroup type="footer" >
                         <p:row>
-                            <p:column colspan="3" style="text-align:right" footerText="#{lbl['consulta.cuentaPendiente.total']}"/>
-                            <p:column>
+                            <p:column colspan="3" style="text-align:right" footerText="#{lbl['consulta.cuentaPendiente.total']}" filterable="false"/>
+                            <p:column filterable="false">
                                 <f:facet name="footer">
                                     <h:outputText value="#{vistaCuentaPendiente.totalSumListaCartones}">
                                         <f:convertNumber type="currency" maxFractionDigits="0" currencySymbol="¢"/>

@@ -38,7 +38,7 @@ public class VistaLogin implements Serializable {
     }
 
     public String login() {
-        Optional<Usuario> oUsuario = servicioUsuario.obtenerPorNombre(usuario, clave);
+        Optional<Usuario> oUsuario = servicioUsuario.obtenerPorNombrePassword(usuario, clave);
         return oUsuario.isPresent() ? "/xhtml/principal?faces-redirect=true" : "";
     }
 }
