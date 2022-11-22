@@ -12,15 +12,15 @@
             <p:panel>
                 <p:toolbar styleClass="col-12 align-items-end">
                     <p:toolbarGroup align="left" styleClass="align-items-center ui-fluid col-12 md:col-6 xl:col-3" >
-                        <p:selectOneMenu id="tb-usuario" value="#{vistaCuentaPendiente.idUsuario}" required="true">
+                        <p:selectOneMenu id="tb-usuario" value="#{vistaConsultaPendiente.idUsuario}" required="true">
                             <f:selectItem itemLabel="Seleccione" itemValue="#{null}"/>
-                            <f:selectItems value="#{vistaCuentaPendiente.listaUsuario}" 
+                            <f:selectItems value="#{vistaConsultaPendiente.listaUsuario}" 
                                            var="usuario" 
                                            itemLabel="#{usuario.nombre} #{usuario.apellido1}"
                                            itemValue="#{usuario.idUsuario}"/>
                         </p:selectOneMenu>
                         <p:commandButton value="Buscar" icon="pi pi-search" 
-                                         actionListener="#{vistaCuentaPendiente.cargarListaCartones()}" 
+                                         actionListener="#{vistaConsultaPendiente.cargarListaCartones()}" 
                                          update="form_c_cuentaPendiente"
                                          styleClass="ui-button-success mt-2" />                       
                     </p:toolbarGroup>
@@ -30,8 +30,8 @@
                         </p:commandButton>
                     </p:toolbarGroup>
                 </p:toolbar>
-                
-                <p:dataTable id="dt-carton" var="carton" value="#{vistaCuentaPendiente.listaCartones}" rows="10"
+
+                <p:dataTable id="dt-carton" var="carton" value="#{vistaConsultaPendiente.listaCartones}" rows="10"
                              paginator="true" paginatorPosition="bottom" widgetVar="dt-carton"
                              emptyMessage="#{lbl['consulta.cuentaPendiente.tablaVacia']}"
                              reflow="true" stripedRows="true" rowKey="#{carton.idCarton}"
@@ -87,7 +87,7 @@
                             <p:column colspan="3" style="text-align:right" footerText="#{lbl['consulta.cuentaPendiente.total']}" filterable="false"/>
                             <p:column filterable="false">
                                 <f:facet name="footer">
-                                    <h:outputText value="#{vistaCuentaPendiente.totalSumListaCartones}">
+                                    <h:outputText value="#{vistaConsultaPendiente.totalSumListaCartones}">
                                         <f:convertNumber type="currency" maxFractionDigits="0" currencySymbol="¢"/>
                                     </h:outputText>
                                 </f:facet>

@@ -1,6 +1,7 @@
 package com.zeggs.servicio;
 
 import com.zeggs.entidad.Usuario;
+import com.zeggs.util.ServicioGenerico;
 import java.util.List;
 import java.util.Optional;
 import javax.ejb.Stateless;
@@ -12,7 +13,7 @@ import javax.persistence.PersistenceContext;
  * @author Brian
  */
 @Stateless
-public class ServicioUsuario {
+public class ServicioUsuario extends ServicioGenerico {
 
     @PersistenceContext(unitName = "zeggsPU")
     EntityManager em;

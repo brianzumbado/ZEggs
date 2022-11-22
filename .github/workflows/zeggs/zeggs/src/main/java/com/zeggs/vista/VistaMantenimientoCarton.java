@@ -3,12 +3,14 @@ package com.zeggs.vista;
 import com.zeggs.entidad.Carton;
 import com.zeggs.entidad.Usuario;
 import com.zeggs.servicio.ServicioCarton;
-import com.zeggs.servicio.ServicioUsuario;
 import com.zeggs.util.Utilitario;
 import java.io.Serializable;
+import java.time.ZoneId;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -45,7 +47,7 @@ public class VistaMantenimientoCarton implements Serializable {
     }
 
     public void agregarCarton() {
-        try {
+        try {                       
             cartonNuevo.setFecRegistra(new Date());
             if ((cartonNuevo.getIdUsuario() != null)
                     && (cartonNuevo.getEstado() != null)) {

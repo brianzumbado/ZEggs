@@ -20,7 +20,7 @@ import lombok.Setter;
  */
 @Named
 @ViewScoped
-public class VistaCuentaPendiente implements Serializable {
+public class VistaConsultaPendiente implements Serializable {
 
     @Inject
     private ServicioCarton servicioCarton;
