@@ -1,17 +1,16 @@
 package com.zeggs.vista;
 
-import com.zeggs.entidad.Carton;
 import com.zeggs.entidad.GrupoAnimal;
 import com.zeggs.entidad.RegistroProducto;
-import com.zeggs.entidad.Usuario;
-import com.zeggs.servicio.ServicioCarton;
 import com.zeggs.servicio.ServicioRegistroProducto;
+import com.zeggs.util.Message;
 import com.zeggs.util.Utilitario;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -32,6 +31,8 @@ public class VistaMantenimientoProducto implements Serializable {
     private ServicioRegistroProducto servicioRegProducto;
     @Inject
     private Utilitario utilitario;
+    @Inject
+    private Message msj;
 
     @Getter
     @Setter
@@ -51,18 +52,20 @@ public class VistaMantenimientoProducto implements Serializable {
             productoNuevo.setFecRegistra(new Date());
             if (productoNuevo.getIdGrupoAnimal() != null) {
                 servicioRegProducto.agregarPorGrupo(productoNuevo);
-                FacesContext.getCurrentInstance().getExternalContext().redirect("../../xhtml/principal.xhtml");
-                FacesContext.getCurrentInstance().responseComplete();
-            } else {
-                //msj de error
+                msj.addMessage(FacesMessage.SEVERITY_INFO, "Guardado Exitoso", null);
+                limpiar();
             }
         } catch (Exception ex) {
-            //msj error
+            msj.addMessage(FacesMessage.SEVERITY_ERROR, "Ocurrió un Error", null);
         }
     }
 
     public void cargaGruposAnimales() {
         listaGrupoAnimal = utilitario.cargaGrupoAnimal();
+    }
+    
+    public void limpiar(){
+        productoNuevo = new RegistroProducto();
     }
 
 }

@@ -17,18 +17,20 @@
                 <div class="profile">
                     <p:graphicImage name="images/profile1.png" library="omega-layout" />
                     <a id="profile-button" href="#">
-                        <span class="username">#{vistaPrincipal.usuario}</span>
+                        <span class="username">#{vistaPrincipal.usuario.nombre}</span>
                         <!--<i class="pi pi-fw pi-cog"/>-->
                     </a>
-<!--                    <ul>
-                        <li><a href="#"><i class="pi pi-fw pi-sliders-h"/><span>Account</span></a></li>
-                        <li><a href="#"><i class="pi pi-fw pi-bell"/><span>Notifications</span><span class="menu-badge">2</span></a></li>
-                        <li><a href="#{vistaLogin.logout()}"><i class="pi pi-fw pi-sign-out"/><span>#{lbl['sidebar.salir']}</span></a></li>
-                    </ul>-->
+                    <ui:remove>
+                        <!--                    <ul>
+                                                <li><a href="#"><i class="pi pi-fw pi-sliders-h"/><span>Account</span></a></li>
+                                                <li><a href="#"><i class="pi pi-fw pi-bell"/><span>Notifications</span><span class="menu-badge">2</span></a></li>
+                                                <li><a href="#{vistaPrincipal.logout()}"><i class="pi pi-fw pi-sign-out"/><span>#{lbl['sidebar.salir']}</span></a></li>
+                                            </ul>-->
+                    </ui:remove>
                 </div>
                 <div class="menu">
                     <po:menu widgetVar="OmegaMenuWidget">
-                        <p:menuitem id="m_salir" value="#{lbl['sidebar.salir']}" icon="pi pi-fw pi-sign-out" outcome="#{vistaLogin.logout()}"/>
+                        <p:menuitem id="m_salir" value="#{lbl['sidebar.salir']}" icon="pi pi-fw pi-sign-out" outcome="#{vistaPrincipal.logout()}"/>
                         <p:menuitem id="m_principal" value="#{lbl['sidebar.principal']}" icon="pi pi-fw pi-home" outcome="/xhtml/principal.xhtml"/>
                         <p:submenu id="m_consultas" label="#{lbl['sidebar.consulta']}" icon="pi pi-fw pi-star" >
                             <p:menuitem id="m_consultaPendiente" value="#{lbl['sidebar.consulta.cuentaPendiente']}" icon="pi pi-fw pi-id-card" outcome="/xhtml/consultas/pendientes"/>                            

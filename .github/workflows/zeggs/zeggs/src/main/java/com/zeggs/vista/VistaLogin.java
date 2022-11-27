@@ -1,6 +1,7 @@
 package com.zeggs.vista;
 
 import com.zeggs.entidad.Usuario;
+import com.zeggs.seguridad.Constants;
 import com.zeggs.servicio.ServicioUsuario;
 import java.io.Serializable;
 import java.util.Optional;
@@ -22,6 +23,8 @@ public class VistaLogin implements Serializable {
 
     @Inject
     private ServicioUsuario servicioUsuario;
+    @Inject
+    private VistaAutenticar autenticar;
 
     @Getter
     @Setter
@@ -39,10 +42,10 @@ public class VistaLogin implements Serializable {
 
     public String login() {
         Optional<Usuario> oUsuario = servicioUsuario.obtenerPorNombrePassword(usuario, clave);
-        return oUsuario.isPresent() ? "/xhtml/principal?faces-redirect=true" : "";
-    }
-    
-    public String logout() {
-        return "/xhtml/login?faces-redirect=true";
+        if (oUsuario.isPresent()) {
+            return autenticar.autenticar(oUsuario);
+        } else {
+            return "/" + Constants.DEFAULT_ACCESS_DENIED_PAGE;
+        }
     }
 }

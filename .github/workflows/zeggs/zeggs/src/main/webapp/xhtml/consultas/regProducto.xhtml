@@ -12,7 +12,7 @@
             <p:dataTable id="dt-regProd" var="regProd" value="#{vistaConsultaRegProducto.listaRegProd}" rows="10"
                          paginator="true" paginatorPosition="bottom" widgetVar="dt-regProd"
                          emptyMessage="#{lbl['consulta.registroProducto.tablaVacia']}"
-                         reflow="true" 
+                         reflow="false" scrollable="true"
                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                          currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
                          rowsPerPageTemplate="5,10,{ShowAll|'All'}">
@@ -21,7 +21,7 @@
                     <p:outputLabel style="font-size: x-large">#{lbl['consulta.registroProducto.tablaTitulo']}</p:outputLabel>
                 </f:facet>
 
-                <p:column headerText="#{lbl['consulta.registroProducto.fecha']}" 
+                <p:column headerText="#{lbl['consulta.registroProducto.fecha']}" width="100px"
                           sortBy="#{regProd.fecRegistra}" 
                           >
                     <h:outputText value="#{regProd.fecRegistra}" >
@@ -29,13 +29,13 @@
                     </h:outputText>
                 </p:column>
 
-                <p:column headerText="#{lbl['consulta.registroProducto.grupo']}"
+                <p:column headerText="#{lbl['consulta.registroProducto.grupo']}" width="100px"
                           sortBy="#{regProd.nombreGrupo}" 
                           >
                     <h:outputText value="#{regProd.nombreGrupo}" />
                 </p:column>
 
-                <p:column headerText="#{lbl['consulta.registroProducto.cantidad']}"
+                <p:column headerText="#{lbl['consulta.registroProducto.cantidad']}" width="100px"
                           sortBy="#{regProd.cantidadProducto}" 
                           >
                     <h:outputText value="#{regProd.cantidadProducto}" />

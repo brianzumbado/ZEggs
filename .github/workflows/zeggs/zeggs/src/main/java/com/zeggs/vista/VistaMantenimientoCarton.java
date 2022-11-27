@@ -3,15 +3,14 @@ package com.zeggs.vista;
 import com.zeggs.entidad.Carton;
 import com.zeggs.entidad.Usuario;
 import com.zeggs.servicio.ServicioCarton;
+import com.zeggs.util.Message;
 import com.zeggs.util.Utilitario;
 import java.io.Serializable;
-import java.time.ZoneId;
-import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -32,6 +31,8 @@ public class VistaMantenimientoCarton implements Serializable {
     private ServicioCarton servicioCarton;
     @Inject
     private Utilitario utilitario;
+    @Inject
+    private Message msj;
 
     @Getter
     @Setter
@@ -47,13 +48,13 @@ public class VistaMantenimientoCarton implements Serializable {
     }
 
     public void agregarCarton() {
-        try {                       
+        try {
             cartonNuevo.setFecRegistra(new Date());
             if ((cartonNuevo.getIdUsuario() != null)
                     && (cartonNuevo.getEstado() != null)) {
                 servicioCarton.agregarPorUsuario(cartonNuevo);
-                FacesContext.getCurrentInstance().getExternalContext().redirect("../../xhtml/principal.xhtml");
-                FacesContext.getCurrentInstance().responseComplete();
+                msj.addMessage(FacesMessage.SEVERITY_INFO, "Guardado Exitoso", null);
+                limpiar();
             } else {
                 //msj de error
             }
@@ -64,6 +65,10 @@ public class VistaMantenimientoCarton implements Serializable {
 
     public void cargaUsuarios() {
         listaUsuario = utilitario.cargaUsuarios();
+    }
+
+    public void limpiar() {
+        cartonNuevo = new Carton();
     }
 
 }

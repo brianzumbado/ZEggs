@@ -9,13 +9,14 @@
 
     <ui:define name="content">
         <h:form id="form_m_producto">
+            <p:growl id="msj" showDetail="false" />
             <p:panel>
                 <p:panelGrid columns="4" layout="flex"
                              columnClasses="col-12 md:col-3 xl:col-2, col-12 md:col-9 xl:col-4, col-12 md:col-3 xl:col-2, col-12 md:col-9 xl:col-4"
                              contentStyleClass="align-items-baseline ui-fluid">
                     <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarProducto.grupo']}" />
-                    <p:selectOneMenu id="producto" value="#{vistaMantenimientoProducto.productoNuevo.idGrupoAnimal}" required="true" >
-                        <f:selectItem itemLabel="Seleccione" itemValue="#{null}"/>
+                    <p:selectOneMenu id="producto" value="#{vistaMantenimientoProducto.productoNuevo.idGrupoAnimal}" required="true">
+                        <f:selectItem itemLabel="Seleccione" itemValue="#{null}" noSelectionOption="true"/>
                         <f:selectItems value="#{vistaMantenimientoProducto.listaGrupoAnimal}" 
                                        var="grupoAnimal" 
                                        itemLabel="#{grupoAnimal.nombreGrupo}"

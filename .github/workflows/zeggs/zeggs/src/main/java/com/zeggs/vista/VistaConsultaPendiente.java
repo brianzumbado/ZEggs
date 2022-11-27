@@ -2,6 +2,7 @@ package com.zeggs.vista;
 
 import com.zeggs.entidad.Carton;
 import com.zeggs.entidad.Usuario;
+import com.zeggs.seguridad.AdminSession;
 import com.zeggs.servicio.ServicioCarton;
 import com.zeggs.util.Utilitario;
 import java.io.Serializable;
@@ -26,6 +27,8 @@ public class VistaConsultaPendiente implements Serializable {
     private ServicioCarton servicioCarton;
     @Inject
     private Utilitario utilitario;
+    @Inject
+    private AdminSession usuario;
 
     @Getter
     @Setter
@@ -44,6 +47,7 @@ public class VistaConsultaPendiente implements Serializable {
     public void init() {
         listaCartones = new ArrayList<>();
         cargaUsuarios();
+        idUsuario = usuario.getUser().getIdUsuario();
         cargarListaCartones();
     }
 

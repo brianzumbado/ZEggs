@@ -51,7 +51,7 @@
 
 body .ui-widget {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.125rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 body .ui-icon {
@@ -2752,7 +2752,7 @@ body .ui-autocomplete .ui-autocomplete-multiple-container .ui-autocomplete-input
 }
 body .ui-autocomplete .ui-autocomplete-multiple-container .ui-autocomplete-input-token input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #495057;
   -webkit-appearance: none;
   appearance: none;
@@ -3010,7 +3010,7 @@ body .ui-chips .ui-chips-container .ui-chips-input-token {
 }
 body .ui-chips .ui-chips-container .ui-chips-input-token input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #495057;
   -webkit-appearance: none;
   appearance: none;
@@ -3190,7 +3190,7 @@ body .ui-datepicker .ui-timepicker-timeinput input {
   padding: 0.5rem 0.5rem;
   border: 1px solid #ced4da;
   outline: 0 none;
-  font-size: 1.125rem;
+  font-size: 1rem;
   border-radius: 4px;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
   -webkit-appearance: none;
@@ -3207,7 +3207,7 @@ body .ui-datepicker .ui-timepicker-timeinput input:focus {
 }
 body .ui-datepicker .ui-timepicker-timeinput .ui-separator > span {
   padding: 0.5rem 0.5rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 body .ui-datepicker .ui-datepicker-buttonpane button,
 body .ui-datepicker .ui-datepicker-buttonbar button {
@@ -3523,7 +3523,7 @@ body .ui-inputfield {
   padding: 0.5rem 0.5rem;
   border: 1px solid #ced4da;
   outline: 0 none;
-  font-size: 1.125rem;
+  font-size: 1rem;
   border-radius: 4px;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
   -webkit-appearance: none;
@@ -4744,7 +4744,7 @@ body .ui-menu.ui-menu-toggleable .ui-menu-list .ui-widget-header .ui-icon-triang
   content: "\e902";
 }
 body .ui-menu.ui-menu-toggleable .ui-menu-list .ui-widget-header h3 {
-  font-size: 1.125rem;
+  font-size: 1rem;
   padding-left: 0;
 }
 body .ui-menu .ui-menu-list .ui-widget-header {
@@ -4760,7 +4760,7 @@ body .ui-menu .ui-menu-list .ui-widget-header {
 }
 body .ui-menu .ui-menu-list .ui-widget-header h3 {
   padding: 0;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #495057;
   float: none;
@@ -4932,7 +4932,7 @@ body .ui-menu.ui-megamenu .ui-widget-header {
   border: 0 none;
   padding: 0.75rem 1rem;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
   border-radius: 0;
 }
@@ -4992,7 +4992,7 @@ body .ui-panelmenu h3.ui-panelmenu-header {
   border-radius: 0;
   position: relative;
   outline: 0 none;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 body .ui-panelmenu h3.ui-panelmenu-header .ui-icon {
   position: static;

@@ -1,10 +1,14 @@
 package com.zeggs.vista;
 
+import com.zeggs.entidad.Usuario;
+import com.zeggs.seguridad.AdminSession;
+import com.zeggs.seguridad.Constants;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
-import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,14 +19,21 @@ import lombok.Setter;
 @Named
 @ViewScoped
 public class VistaPrincipal implements Serializable {
-
+    
     @Getter
     @Setter
-    @NotNull
-    private String usuario;
+    private Usuario usuario;
+    
+    @Inject
+    private AdminSession user;
 
     @PostConstruct
     public void init() {
-
+        usuario = user.getUser();
+    }
+    
+    public String logout() {
+        user = null;
+        return "/" + Constants.DEFAULT_LOGIN_PAGE;
     }
 }
