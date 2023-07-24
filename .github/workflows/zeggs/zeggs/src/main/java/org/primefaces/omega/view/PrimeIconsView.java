@@ -15,13 +15,6 @@
  */
 package org.primefaces.omega.view;
 
-import org.primefaces.shaded.json.JSONArray;
-import org.primefaces.shaded.json.JSONException;
-import org.primefaces.shaded.json.JSONObject;
-
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -29,6 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
+import org.primefaces.shaded.json.JSONArray;
+import org.primefaces.shaded.json.JSONException;
+import org.primefaces.shaded.json.JSONObject;
 
 @Named
 @ApplicationScoped

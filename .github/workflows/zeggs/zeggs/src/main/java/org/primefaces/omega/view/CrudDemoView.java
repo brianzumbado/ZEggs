@@ -15,22 +15,21 @@
  */
 package org.primefaces.omega.view;
 
-import org.primefaces.PrimeFaces;
-import org.primefaces.event.ToggleEvent;
-import org.primefaces.model.Visibility;
-import org.primefaces.omega.domain.Product;
-import org.primefaces.omega.service.OrderService;
-import org.primefaces.omega.service.ProductService;
-
+import java.io.Serializable;
+import java.util.List;
+import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.io.Serializable;
-import java.util.List;
-import java.util.UUID;
+import org.primefaces.PrimeFaces;
+import org.primefaces.event.ToggleEvent;
+import org.primefaces.model.Visibility;
+import org.primefaces.omega.domain.Product;
+import org.primefaces.omega.service.OrderService;
+import org.primefaces.omega.service.ProductService;
 
 @Named
 @ViewScoped

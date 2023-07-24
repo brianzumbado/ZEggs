@@ -15,13 +15,12 @@
  */
 package org.primefaces.omega.service;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 import org.primefaces.model.CheckboxTreeNode;
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 import org.primefaces.omega.domain.Document;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
 
 @Named
 @ApplicationScoped

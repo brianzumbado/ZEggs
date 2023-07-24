@@ -15,13 +15,11 @@
  */
 package org.primefaces.omega.view;
 
+import java.io.Serializable;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-
 import org.primefaces.PrimeFaces;
 import org.primefaces.util.EscapeUtils;
-
-import java.io.Serializable;
 
 @Named
 @ViewScoped

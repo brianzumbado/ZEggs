@@ -37,7 +37,7 @@ public class Constants {
     /**
      * Página de sesión expirada.
      */
-    public static final String DEFAULT_EXPIRED_PAGE = "xhtml/invalidstate.xhtml?faces-redirect=true";
+    public static final String DEFAULT_EXPIRED_PAGE = "xhtml/notfound.xhtml?faces-redirect=true";
 
     /**
      * Indica si está desactivado el filtro de seguridad.

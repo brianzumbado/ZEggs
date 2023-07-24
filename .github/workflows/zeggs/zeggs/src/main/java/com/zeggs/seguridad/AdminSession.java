@@ -1,8 +1,8 @@
 package com.zeggs.seguridad;
 
 import com.zeggs.entidad.Usuario;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
 import lombok.Getter;

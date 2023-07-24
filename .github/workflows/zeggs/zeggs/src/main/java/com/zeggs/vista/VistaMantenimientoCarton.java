@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -48,18 +47,18 @@ public class VistaMantenimientoCarton implements Serializable {
     }
 
     public void agregarCarton() {
-        try {
-            cartonNuevo.setFecRegistra(new Date());
+        try {            
+            cartonNuevo.setIdTipoAnimal(1l);
             if ((cartonNuevo.getIdUsuario() != null)
                     && (cartonNuevo.getEstado() != null)) {
                 servicioCarton.agregarPorUsuario(cartonNuevo);
                 msj.addMessage(FacesMessage.SEVERITY_INFO, "Guardado Exitoso", null);
                 limpiar();
             } else {
-                //msj de error
+                msj.addMessage(FacesMessage.SEVERITY_ERROR, "Ocurrió un Error", null);
             }
         } catch (Exception ex) {
-            //msj error
+            msj.addMessage(FacesMessage.SEVERITY_ERROR, "Ocurrió un Error", null);
         }
     }
 

@@ -15,13 +15,12 @@
  */
 package org.primefaces.omega.view;
 
-import org.primefaces.event.FileUploadEvent;
-import org.primefaces.model.file.UploadedFile;
-
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import org.primefaces.event.FileUploadEvent;
+import org.primefaces.model.file.UploadedFile;
 
 @Named
 @RequestScoped

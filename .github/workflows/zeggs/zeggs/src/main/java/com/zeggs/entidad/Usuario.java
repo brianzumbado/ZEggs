@@ -48,5 +48,7 @@ public class Usuario implements Serializable {
     @Column(name = "fec_registra")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistra;
+    @Column(name = "rol")
+    private Boolean rol;
 
 }

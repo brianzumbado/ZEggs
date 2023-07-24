@@ -15,15 +15,14 @@
  */
 package org.primefaces.omega.service;
 
-import org.primefaces.omega.domain.InventoryStatus;
-import org.primefaces.omega.domain.Product;
-
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
+import org.primefaces.omega.domain.InventoryStatus;
+import org.primefaces.omega.domain.Product;
 
 
 @Named

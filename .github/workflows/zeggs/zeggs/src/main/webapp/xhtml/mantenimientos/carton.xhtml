@@ -34,6 +34,8 @@
                         <f:selectItem itemLabel="Cancelado" itemValue="1"/>
                         <f:selectItem itemLabel="Abonado" itemValue="2"/>  
                     </p:selectOneMenu>
+                    <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarCarton.fecha']}"/>
+                    <p:calendar value="#{vistaMantenimientoCarton.cartonNuevo.fecRegistra}"  required="true"/>
                 </p:panelGrid>
                 <p:panelGrid columns="2" layout="flex"
                              columnClasses="col-12 md:col-3 xl:col-2, col-12 md:col-3 xl:col-2"

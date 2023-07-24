@@ -15,17 +15,16 @@
  */
 package org.primefaces.omega.service;
 
-import org.primefaces.omega.domain.Country;
-import org.primefaces.omega.domain.Customer;
-import org.primefaces.omega.domain.CustomerStatus;
-import org.primefaces.omega.domain.Representative;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
+import org.primefaces.omega.domain.Country;
+import org.primefaces.omega.domain.Customer;
+import org.primefaces.omega.domain.CustomerStatus;
+import org.primefaces.omega.domain.Representative;
 
 @Named
 @ApplicationScoped

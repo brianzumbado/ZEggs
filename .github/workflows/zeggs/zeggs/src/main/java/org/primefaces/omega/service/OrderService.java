@@ -15,16 +15,15 @@
  */
 package org.primefaces.omega.service;
 
-import org.primefaces.omega.domain.Order;
-import org.primefaces.omega.domain.OrderStatus;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
+import org.primefaces.omega.domain.Order;
+import org.primefaces.omega.domain.OrderStatus;
 
 @Named
 @ApplicationScoped

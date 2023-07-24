@@ -15,6 +15,12 @@
  */
 package org.primefaces.omega.view;
 
+import java.io.Serializable;
+import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import org.primefaces.event.ToggleEvent;
 import org.primefaces.model.Visibility;
 import org.primefaces.omega.domain.Customer;
@@ -22,13 +28,6 @@ import org.primefaces.omega.domain.Product;
 import org.primefaces.omega.service.CustomerService;
 import org.primefaces.omega.service.OrderService;
 import org.primefaces.omega.service.ProductService;
-
-import javax.annotation.PostConstruct;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.io.Serializable;
-import java.util.List;
 
 @Named
 @ViewScoped

@@ -15,14 +15,13 @@
  */
 package org.primefaces.omega.view;
 
-import org.primefaces.omega.domain.Customer;
-import org.primefaces.omega.service.CustomerService;
-
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.List;
+import org.primefaces.omega.domain.Customer;
+import org.primefaces.omega.service.CustomerService;
 
 @Named
 @RequestScoped

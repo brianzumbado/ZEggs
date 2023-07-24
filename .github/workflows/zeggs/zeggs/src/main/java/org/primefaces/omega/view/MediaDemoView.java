@@ -15,18 +15,17 @@
  */
 package org.primefaces.omega.view;
 
-import org.primefaces.omega.domain.Product;
-import org.primefaces.omega.service.ProductService;
-
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.ArrayList;
-import java.util.List;
 import org.primefaces.model.ResponsiveOption;
 import org.primefaces.omega.domain.Photo;
+import org.primefaces.omega.domain.Product;
 import org.primefaces.omega.service.PhotoService;
+import org.primefaces.omega.service.ProductService;
 
 @Named
 @RequestScoped

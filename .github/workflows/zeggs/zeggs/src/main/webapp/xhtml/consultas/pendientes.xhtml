@@ -12,7 +12,7 @@
             <p:panel>
                 <p:toolbar styleClass="col-12 align-items-end">
                     <p:toolbarGroup align="left" styleClass="align-items-center ui-fluid col-12 md:col-6 xl:col-3" >
-                        <p:selectOneMenu id="tb-usuario" value="#{vistaConsultaPendiente.idUsuario}" >
+                        <p:selectOneMenu id="tb-usuario" rendered="#{user.rol}" value="#{vistaConsultaPendiente.idUsuario}" >
                             <f:selectItem itemLabel="Seleccione" itemValue="#{null}" noSelectionOption="true" />
                             <f:selectItems value="#{vistaConsultaPendiente.listaUsuario}" 
                                            var="usuario" 
@@ -75,7 +75,7 @@
 
                     <p:column headerText="#{lbl['consulta.cuentaPendiente.estado']}" width="100px"
                               sortBy="#{carton.estado}"
-                              filterMatchMode="exact" filterBy="#{carton.estado}">
+                              filterMatchMode="exact" filterBy="#{carton.estado}" filterValue="0">
                         <f:facet name="filter" >
                             <p:selectOneMenu onchange="PF('dt-carton').filter()" style="width: 100%" styleClass="ui-custom-filter">
                                 <f:selectItem itemLabel="Todos" itemValue="#{null}" noSelectionOption="true" />

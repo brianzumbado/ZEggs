@@ -15,8 +15,8 @@
  */
 package org.primefaces.omega.filter;
 
-import javax.servlet.*;
 import java.io.IOException;
+import javax.servlet.*;
 
 public class CharacterEncodingFilter implements Filter {
 

@@ -15,6 +15,15 @@
  */
 package org.primefaces.omega.view;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import org.primefaces.event.ItemSelectEvent;
 import org.primefaces.model.charts.ChartData;
 import org.primefaces.model.charts.axes.cartesian.CartesianScales;
@@ -38,6 +47,7 @@ import org.primefaces.model.charts.hbar.HorizontalBarChartModel;
 import org.primefaces.model.charts.line.LineChartDataSet;
 import org.primefaces.model.charts.line.LineChartModel;
 import org.primefaces.model.charts.line.LineChartOptions;
+import org.primefaces.model.charts.optionconfig.animation.Animation;
 import org.primefaces.model.charts.optionconfig.elements.Elements;
 import org.primefaces.model.charts.optionconfig.elements.ElementsLine;
 import org.primefaces.model.charts.optionconfig.legend.Legend;
@@ -52,17 +62,6 @@ import org.primefaces.model.charts.radar.RadarChartDataSet;
 import org.primefaces.model.charts.radar.RadarChartModel;
 import org.primefaces.model.charts.radar.RadarChartOptions;
 import org.primefaces.model.charts.scatter.ScatterChartModel;
-
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.inject.Named;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import org.primefaces.model.charts.optionconfig.animation.Animation;
 
 @Named
 @RequestScoped

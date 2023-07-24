@@ -25,6 +25,8 @@
 
                     <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarProducto.cantidad']}"/>
                     <p:inputNumber value="#{vistaMantenimientoProducto.productoNuevo.cantidad}" required="true"/>
+                    <p:outputLabel for="@next" value="#{lbl['mantenimiento.agregarProducto.fecha']}"/>
+                    <p:calendar value="#{vistaMantenimientoProducto.productoNuevo.fecRegistra}"  required="true"/>
                 </p:panelGrid>
                 <p:panelGrid columns="2" layout="flex"
                              columnClasses="col-12 md:col-3 xl:col-2, col-12 md:col-3 xl:col-2"

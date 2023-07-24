@@ -4,7 +4,6 @@ import com.zeggs.entidad.RegistroProducto;
 import com.zeggs.modelo.RegistroProductoModelo;
 import com.zeggs.util.ServicioGenerico;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

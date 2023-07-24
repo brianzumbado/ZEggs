@@ -36,6 +36,8 @@ public class Carton implements Serializable {
 
     @Column(name = "id_usuario")
     private Long idUsuario;
+    @Column(name = "id_tipo_animal")
+    private Long idTipoAnimal;
     @Column(name = "cantidad")
     private Integer cantidad;
     @Column(name = "precio")

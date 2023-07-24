@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -49,7 +48,6 @@ public class VistaMantenimientoProducto implements Serializable {
 
     public void agregarProducto() {
         try {
-            productoNuevo.setFecRegistra(new Date());
             if (productoNuevo.getIdGrupoAnimal() != null) {
                 servicioRegProducto.agregarPorGrupo(productoNuevo);
                 msj.addMessage(FacesMessage.SEVERITY_INFO, "Guardado Exitoso", null);

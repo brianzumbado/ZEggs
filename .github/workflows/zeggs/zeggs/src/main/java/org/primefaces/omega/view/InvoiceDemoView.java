@@ -15,9 +15,9 @@
  */
 package org.primefaces.omega.view;
 
+import java.time.LocalDate;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import java.time.LocalDate;
 
 @Named
 @RequestScoped

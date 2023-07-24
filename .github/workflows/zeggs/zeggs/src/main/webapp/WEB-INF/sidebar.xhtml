@@ -31,14 +31,14 @@
                 <div class="menu">
                     <po:menu widgetVar="OmegaMenuWidget">
                         <p:menuitem id="m_salir" value="#{lbl['sidebar.salir']}" icon="pi pi-fw pi-sign-out" outcome="#{vistaPrincipal.logout()}"/>
-                        <p:menuitem id="m_principal" value="#{lbl['sidebar.principal']}" icon="pi pi-fw pi-home" outcome="/xhtml/principal.xhtml"/>
+                        <p:menuitem id="m_principal" value="#{lbl['sidebar.principal']}" icon="pi pi-fw pi-home" outcome="/xhtml/principal"/>
                         <p:submenu id="m_consultas" label="#{lbl['sidebar.consulta']}" icon="pi pi-fw pi-star" >
                             <p:menuitem id="m_consultaPendiente" value="#{lbl['sidebar.consulta.cuentaPendiente']}" icon="pi pi-fw pi-id-card" outcome="/xhtml/consultas/pendientes"/>                            
-                            <p:menuitem id="m_consultaRegProducto" value="Cantidad Producto" icon="pi pi-fw pi-chart-bar" outcome="/xhtml/consultas/regProducto"/>                            
+                            <p:menuitem id="m_consultaRegProducto" rendered="#{user.rol}" value="Cantidad Producto" icon="pi pi-fw pi-chart-bar" outcome="/xhtml/consultas/regProducto"/>                            
                         </p:submenu>
-                        <p:submenu id="m_mantenimientos" label="#{lbl['sidebar.mantenimiento']}" icon="pi pi-fw pi-pencil" >
-                            <p:menuitem id="m_carton" value="#{lbl['sidebar.mantenimiento.agregarCarton']}" icon="pi pi-fw pi-table" outcome="/xhtml/mantenimientos/carton"/>
-                            <p:menuitem id="m_producto" value="#{lbl['sidebar.mantenimiento.agregarProducto']}" icon="pi pi-check-circle" outcome="/xhtml/mantenimientos/producto"/>
+                        <p:submenu id="m_mantenimientos" rendered="#{user.rol}" label="#{lbl['sidebar.mantenimiento']}" icon="pi pi-fw pi-pencil" >
+                            <p:menuitem id="m_carton" rendered="#{user.rol}" value="#{lbl['sidebar.mantenimiento.agregarCarton']}" icon="pi pi-fw pi-table" outcome="/xhtml/mantenimientos/carton"/>
+                            <p:menuitem id="m_producto" rendered="#{user.rol}" value="#{lbl['sidebar.mantenimiento.agregarProducto']}" icon="pi pi-check-circle" outcome="/xhtml/mantenimientos/producto"/>
                         </p:submenu>
                     </po:menu>
                 </div>

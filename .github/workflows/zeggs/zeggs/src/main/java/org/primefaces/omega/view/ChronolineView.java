@@ -15,11 +15,11 @@
  */
 package org.primefaces.omega.view;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import java.util.ArrayList;
-import java.util.List;
 
 @Named
 @RequestScoped
