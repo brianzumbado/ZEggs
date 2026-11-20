@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>ZEggs - Panel Principal</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</h:head>
+<h:body>
+    <div class="container">
+        <h1>ZEggs - Sistema de Gestión de Huevos</h1>
+        
+        <p:panel header="Bienvenido al Sistema">
+            <p>¡Bienvenido al sistema de gestión de huevos!</p>
+            
+            <p:commandButton value="Cerrar Sesión" 
+                             action="#{sessionUtil.logout()}"
+                             ajax="true"
+                             style="margin-top: 10px;"/>
+        </p:panel>
+        
+        <h:form>
+            <p:panel header="Información del Usuario">
+                <p:outputLabel value="Usuario: #{sessionUtil.currentUser.nombre} #{sessionUtil.currentUser.apellido1} #{sessionUtil.currentUser.apellido2}" />
+                <br/>
+                <p:outputLabel value="Nombre de usuario: #{sessionUtil.currentUser.username}" />
+                <br/>
+                <p:outputLabel value="Fecha de registro: #{sessionUtil.currentUser.fecRegistraFormatted}" />
+            </p:panel>
+        </h:form>
+    </div>
+</h:body>
+</html>

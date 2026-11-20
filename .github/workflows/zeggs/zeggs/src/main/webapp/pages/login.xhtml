@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>ZEggs - Iniciar Sesión</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</h:head>
+<h:body>
+    <div class="container">
+        <h1>ZEggs - Sistema de Gestión de Huevos</h1>
+        <h2>Iniciar Sesión</h2>
+        
+        <h:form id="loginForm">
+            <p:messages autoUpdate="true" showSummary="true" showDetail="false"/>
+            
+            <p:panel header="Acceso al Sistema">
+                <p:panelGrid columns="2" style="width: 100%">
+                    <f:facet name="header">
+                        <h:outputText value="Datos de Acceso"/>
+                    </f:facet>
+                    
+                    <p:outputLabel for="username" value="Usuario:"/>
+                    <p:inputText id="username" 
+                                 value="#{vistaLogin.usuario}" 
+                                 required="true"
+                                 placeholder="Ingrese su nombre de usuario"/>
+                    
+                    <p:outputLabel for="password" value="Contraseña:"/>
+                    <p:password id="password" 
+                                value="#{vistaLogin.clave}" 
+                                required="true"
+                                placeholder="Ingrese su contraseña"/>
+                </p:panelGrid>
+                
+                <p:commandButton value="Iniciar Sesión" 
+                                 action="#{vistaLogin.login()}"
+                                 update="loginForm"
+                                 ajax="true"
+                                 style="margin-top: 10px;"/>
+            </p:panel>
+        </h:form>
+    </div>
+</h:body>
+</html>

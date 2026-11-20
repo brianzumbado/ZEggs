@@ -18,4 +18,12 @@
         </renderer>
     </render-kit>
     
+    <!-- Configuración de validación -->
+    <application>
+        <validator>
+            <validator-id>beanValidation</validator-id>
+            <validator-class>javax.faces.validator.BeanValidator</validator-class>
+        </validator>
+    </application>
+    
 </faces-config>

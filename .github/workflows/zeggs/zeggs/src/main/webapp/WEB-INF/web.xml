@@ -90,4 +90,14 @@
         <extension>svg#fontawesomeregular</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Configuración de validación -->
+    <context-param>
+        <param-name>javax.faces.VALIDATE</param-name>
+        <param-value>true</param-value>
+    </context-param>
 </web-app>

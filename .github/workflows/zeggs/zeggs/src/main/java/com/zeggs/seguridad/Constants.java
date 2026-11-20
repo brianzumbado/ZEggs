@@ -12,12 +12,17 @@ public class Constants {
     /**
      * Página principal.
      */
-    public static final String DEFAULT_INDEX_PAGE = "xhtml/principal.xhtml?faces-redirect=true";
+    public static final String DEFAULT_INDEX_PAGE = "pages/principal";
 
     /**
      * Página de login.
      */
-    public static final String DEFAULT_LOGIN_PAGE = "xhtml/login.xhtml?faces-redirect=true";
+    public static final String DEFAULT_LOGIN_PAGE = "pages/login";
+    
+    /**
+     * Página de acceso denegado.
+     */
+    public static final String DEFAULT_ACCESS_DENIED_PAGE = "pages/acceso-denegado";
 
     /**
      * Página de error.

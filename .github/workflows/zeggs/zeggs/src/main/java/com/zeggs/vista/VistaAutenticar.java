@@ -21,12 +21,13 @@ public class VistaAutenticar {
     @Inject
     private AdminSession adminSession;
 
-    public String autenticar(Optional<Usuario> usuario) {
+    public String autenticar(Usuario usuario) {
         try {
-//            String token = Faces.getRequestParameter("token");
-//            Usuario usuario = obtenerUsuario(usr, password);
-            adminSession.setUser(usuario.get());
-            return "/" + Constants.DEFAULT_INDEX_PAGE;
+            if (usuario != null) {
+                adminSession.setUser(usuario);
+                return "/" + Constants.DEFAULT_INDEX_PAGE;
+            }
+            return "/" + Constants.DEFAULT_LOGIN_PAGE;
         } catch (Exception ex) {
 //            LOG.error("VistaAutenticar.autenticar()", ex);
 //            Messages.addGlobalError("Ocurrió un error al autenticar");

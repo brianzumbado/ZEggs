@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validation-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                   http://xmlns.jcp.org/xml/ns/javaee/validation_1_1.xsd"
+                   version="1.1">
+    
+    <!-- Configuración de validación personalizada para la aplicación ZEggs -->
+    
+    <!-- Validadores personalizados -->
+    <constraint-validator>
+        <constraint-type>com.zeggs.validator.NotBlank</constraint-type>
+        <validator-class>com.zeggs.validator.NotBlankValidator</validator-class>
+    </constraint-validator>
+    
+    <constraint-validator>
+        <constraint-type>com.zeggs.validator.Size</constraint-type>
+        <validator-class>com.zeggs.validator.SizeValidator</validator-class>
+    </constraint-validator>
+    
+    <!-- Configuración de validación por defecto -->
+    <default-provider>org.hibernate.validator.HibernateValidator</default-provider>
+    
+    <!-- Propiedades de validación -->
+    <property name="hibernate.validator.fail_fast">true</property>
+    
+</validation-config>

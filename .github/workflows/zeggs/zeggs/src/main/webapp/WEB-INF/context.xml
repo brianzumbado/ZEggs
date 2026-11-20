@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Configuración de la aplicación ZEggs -->
+    
+    <!-- Parámetros de configuración -->
+    <Parameter name="app.name" value="ZEggs" />
+    <Parameter name="app.version" value="1.0.0" />
+    
+    <!-- Configuración de sesión -->
+    <Manager pathname="" />
+    
+    <!-- Configuración de seguridad -->
+    <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor"
+                     sameSiteCookies="strict" />
+    
+    <!-- Configuración de validación -->
+    <Resource name="jdbc/zeegsDB"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxTotal="100"
+              maxIdle="30"
+              maxWaitMillis="10000"
+              username="root"
+              password="root"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/zeegsDB?useSSL=false&amp;serverTimezone=UTC"/>
+</Context>

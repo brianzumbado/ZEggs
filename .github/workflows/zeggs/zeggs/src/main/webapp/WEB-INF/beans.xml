@@ -3,5 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
        bean-discovery-mode="all">
-
+    
+    <!-- Configuración de validación -->
+    <validation-config>
+        <constraint-validator>
+            <constraint-type>javax.validation.constraints.NotBlank</constraint-type>
+            <validator-class>com.zeggs.validator.NotBlankValidator</validator-class>
+        </constraint-validator>
+        
+        <constraint-validator>
+            <constraint-type>javax.validation.constraints.Size</constraint-type>
+            <validator-class>com.zeggs.validator.SizeValidator</validator-class>
+        </constraint-validator>
+    </validation-config>
+    
 </beans>
